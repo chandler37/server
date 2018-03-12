@@ -5,7 +5,7 @@
 				<span :class="item.icon"></span>
 				<span>{{item.text}}</span>
 			</a>
-			<button v-else class="menuitem">
+			<button v-else>
 				<span :class="item.icon"></span>
 				<span>{{item.text}}</span>
 			</button>
@@ -17,6 +17,11 @@
 <script>
 export default {
 	name: 'popoverMenu',
-	props: ['menu']
+	props: ['menu'],
+	methods: {
+		dispatchToStore (command) {
+			this.$store.dispatch(command);
+		}
+	}
 }
 </script>

@@ -6,8 +6,9 @@ import store from './store'
 
 sync(store, router)
 
-// translation bind to window
+// bind to window
 Vue.prototype.t = t;
+Vue.prototype.OC = OC;
 
 const app = new Vue({
 	router,
